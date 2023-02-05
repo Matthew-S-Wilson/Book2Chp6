@@ -1,0 +1,60 @@
+const buyChocolate = () => {
+    const newBar = {	}
+    newBar.type = "Milk Chocolate"
+    return newBar
+} 
+const chocolateBar = buyChocolate()
+console.log(chocolateBar)
+
+
+
+const addFlavoring = (buyChocolate) => {
+ buyChocolate.flavoring = "Mint"
+ return buyChocolate
+}
+let chocolateWithFlavoring = addFlavoring(chocolateBar)
+console.log (chocolateWithFlavoring)
+
+
+
+const makeBarkMixture = (addFlavoring) => {
+    addFlavoring.mixed;
+if (addFlavoring.flavoring === "Mint" ){
+    addFlavoring.mixed = true
+    return addFlavoring
+// I initially had a problem assigning a new proprty in the if statmenet because I was trying do it inside the return statement; I wrote
+//return addFlavoring.mixed = true 
+//on line 23, which would properly check for mint but would log as simply true or false outside of the other properties being set up
+}
+else{
+    addFlavoring.mixed = false
+    return addFlavoring;
+}
+}
+let chocolateMixed = makeBarkMixture(chocolateWithFlavoring)
+console.log(chocolateMixed)
+
+
+
+const bakeCandy = (makeBarkMixture) => {
+   if (makeBarkMixture.mixed === true){
+         makeBarkMixture.baked = true
+         return makeBarkMixture
+   }
+   else {
+        makeBarkMixture.baked = false
+        return makeBarkMixture
+   }
+}
+let chocolateBaked = bakeCandy(chocolateMixed)
+console.log(chocolateBaked)
+
+
+
+const breakBark = (bakeCandy) => {
+    if (bakeCandy.baked === true){
+        return ["Mint Chocolate Bark Piece"]
+    }
+}
+let brokenBark = breakBark(chocolateBaked)
+console.log(brokenBark)
